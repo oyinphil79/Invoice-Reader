@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-page: #faf8f4;
+  --color-ink: #17171a;
+  --color-muted: #6f6c66;
+  --color-line: #ebe7e0;
+  --color-mint: #4fae7f;
+  --color-peach: #f0a37a;
+  --shadow-card: 0 1px 2px rgb(23 23 26 / 0.04), 0 8px 24px -12px rgb(23 23 26 / 0.12);
+}
+
+html {
+  background: var(--color-page);
+}
+
+body {
+  background-color: var(--color-page);
+  background-image:
+    radial-gradient(40rem 22rem at 18% -6rem, rgb(79 174 127 / 0.16), transparent 70%),
+    radial-gradient(38rem 22rem at 82% -6rem, rgb(240 163 122 / 0.18), transparent 70%);
+  background-repeat: no-repeat;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility card {
+  @apply rounded-3xl border border-line bg-white shadow-card;
+}
+
+@utility pill {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition;
+}
+
+@utility pill-dark {
+  @apply pill bg-ink text-white hover:bg-black disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+@utility pill-light {
+  @apply pill border border-line bg-white text-ink hover:bg-page;
+}
